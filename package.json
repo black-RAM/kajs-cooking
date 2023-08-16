@@ -1,0 +1,26 @@
+{
+  "name": "kajs-cooking",
+  "version": "1.0.0",
+  "description": "\"Restaurant paje created as part of the Odin Project cirriculum\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/black-RAM/kajs-cooking.git"
+  },
+  "keywords": [
+    "\"Odin-Project\""
+  ],
+  "author": "\"Ariel Robert Mutebi\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/black-RAM/kajs-cooking/issues"
+  },
+  "homepage": "https://github.com/black-RAM/kajs-cooking#readme",
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}

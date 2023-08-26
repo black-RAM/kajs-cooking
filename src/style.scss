@@ -29,7 +29,6 @@ img {
 #content {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 2rem;
 
   #side-bar {
     flex: 0 0 min-content;
@@ -60,6 +59,9 @@ img {
     // make side-bar go across when wrapped
     @media screen and (max-width: 750px) {
       flex-grow: 1;
+      position: fixed;
+      top: 0;
+      width: 100vw;
 
       >div {
         align-self: stretch;
@@ -80,11 +82,19 @@ img {
     flex: 500px;
 
     .banner {
-      text-align: center;
+      height: 70vh;
+      background-image: url("./banner-background.jpg");
+      background-attachment: fixed; // parralax effect
+      background-size: cover; // fails to work
+
+      // centre text
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 4rem;
     }
 
-    article {
-      display: flex;
-    }
+
   }
 }

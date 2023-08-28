@@ -10,6 +10,8 @@ $light-gold: #F3DA81;
 }
 
 h1,
+h2,
+h3,
 ul,
 body {
   margin: 0;
@@ -95,6 +97,24 @@ img {
       font-size: 4rem;
     }
 
+    article {
+      padding: 1rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
 
+      h3 {
+        font-size: 40px;
+      }
+
+      .text {
+        padding-right: 2rem;
+        grid-column: 1 / 7;
+      }
+
+      .img-container {
+        grid-column: 7 / 11;
+        background-color: burlywood;
+      }
+    }
   }
 }

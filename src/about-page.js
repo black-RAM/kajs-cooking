@@ -36,7 +36,6 @@ function renderAboutPage() {
   const articleStory = createArticle(
     "story",
     "Our Story",
-    "frying-pan.jpg",
     [
       "Welcome to Kaj's Kitchen, a culinary haven born from a teenage girl's boundless passion and relentless determination.",
       // ... other paragraphs ...
@@ -46,7 +45,6 @@ function renderAboutPage() {
   const articleFlavors = createArticle(
     "flavors",
     "A Journey of Flavors and Dreams",
-    "spices.jpg",
     [
       "Every dish that graces our menu carries a piece of Kaj's heart and a story of her journey. The fusion of global inspirations and locally sourced ingredients reflects her commitment to excellence. As you savor each bite, you're tasting not just food, but the culmination of years of dedication and love.",
       // ... other paragraphs ...
@@ -56,7 +54,6 @@ function renderAboutPage() {
   const articleCTA = createArticle(
     "CTA",
     "Experience Kaj's Vision",
-    "dinner-table.jpg",
     [
       "Step into Kaj's world and experience a culinary adventure that defies expectations. Reserve your table today and embark on a journey that celebrates not just food, but the boundless potential within us all. Come, be a part of our story.",
       // ... other paragraphs ...
@@ -83,7 +80,7 @@ function renderAboutPage() {
 }
 
 // Create article element
-function createArticle(id, headingText, imgSrc, paragraphs) {
+function createArticle(id, headingText, paragraphs) {
   const article = document.createElement("article");
   article.id = id;
 
@@ -102,7 +99,6 @@ function createArticle(id, headingText, imgSrc, paragraphs) {
 
   const imgContainer = document.createElement("aside");
   imgContainer.className = "img-container";
-  imgContainer.style.backgroundImage = `url(${imgSrc})`;
 
   article.appendChild(textDiv);
   article.appendChild(imgContainer);

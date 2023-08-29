@@ -1,11 +1,18 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "Kaj's Kitchen"
+    })
+  ],
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
   devServer: {
     static: './dist'
@@ -31,6 +38,14 @@ module.exports = {
             },
           },
         ]
+      },
+      { // to allow loading images in JS
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
+      { // to load font files
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
       },
     ]
   }

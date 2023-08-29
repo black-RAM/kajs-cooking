@@ -21,16 +21,31 @@ module.exports = {
           "style-loader",
           // Translates CSS into CommonJS
           "css-loader",
+          // rewrite links to images
+          "resolve-url-loader",
           // Compiles Sass to CSS
           {
             loader: "sass-loader",
             options: {
+              sourceMap: true,
               // Prefer `dart-sass`
               implementation: require("sass"),
             },
           },
         ]
-      }
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        use: [
+          {
+            loader: 'resolve-url-loader',
+            options: {
+              limit: 8192, // Set a limit in bytes for inlining as Data URL
+              name: 'images/[name].[hash].[ext]',
+            },
+          },
+        ],
+      },
     ]
   }
 };

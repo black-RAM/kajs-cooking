@@ -1,10 +1,12 @@
 import './style.scss'
 import renderAboutPage from "./about-page"
 
-// setup: insert the content div
+// setup: create the content div
 const contentDiv = document.createElement("div");
 contentDiv.id = "content";
-document.body.appendChild(contentDiv);
 
 // Call the renderAboutPage function
-renderAboutPage();
+renderAboutPage(contentDiv);
+
+// append content to body
+document.body.appendChild(contentDiv);

@@ -47,7 +47,7 @@ function createArticle(id, headingText, paragraphs) {
 
   paragraphs.forEach(paragraphText => {
     const paragraph = document.createElement("p");
-    paragraph.textContent = paragraphText;
+    paragraph.innerHTML = paragraphText;
     textDiv.appendChild(paragraph);
   });
 
@@ -82,4 +82,15 @@ function appendChildren(parent, children) {
   }
 }
 
-export { createNavbar, createFooter, createArticle, createMainWithBanner, appendChildren }
+function createFlowBreak(headingText, flowBreakId) {
+  const flowBreak = document.createElement("div");
+  flowBreak.className = "flow-break";
+  flowBreak.id = flowBreakId;
+  const heading = document.createElement("h3");
+  heading.textContent = headingText;
+  flowBreak.appendChild(heading);
+
+  return flowBreak;
+}
+
+export { createNavbar, createFooter, createArticle, createMainWithBanner, appendChildren, createFlowBreak }

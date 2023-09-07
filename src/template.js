@@ -60,9 +60,10 @@ function createArticle(id, headingText, paragraphs) {
   return article;
 }
 
-function createMainWithBanner(bannerText) {
+function createMainWithBanner(pageName, bannerText) {
   const mainSection = document.createElement("main");
   mainSection.className = "page";
+  mainSection.id = pageName;
 
   const banner = document.createElement("hgroup");
   banner.className = "banner";

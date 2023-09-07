@@ -99,11 +99,10 @@ img {
     }
   }
 
-  .page {
+  main.page {
     flex: 500px;
 
     .banner {
-      @include center-bg("./banner-background.jpg");
       @include center-content();
 
       height: 70vh;
@@ -116,6 +115,7 @@ img {
     article {
       padding: 2rem;
       padding-right: 0;
+
       display: grid;
       grid-template-columns: repeat(10, 1fr);
 
@@ -124,44 +124,51 @@ img {
       }
     }
 
-    // keep it DRY when declaring unique layouts for articles
-    @mixin layout($padding-left-text, $text-cols, $padding-right-text, $img-cols, $img-src, $img-first: false, $bg-color) {
-      background-color: $bg-color;
-
-      .text {
-        align-self: center;
-        grid-column: #{$text-cols};
-        padding-right: $padding-right-text;
-      }
-
-      .img-container {
-        min-height: 35vw;
-        grid-column: #{$img-cols};
-        @include center-bg($img-src); // img a background so its height is equal to text
-        margin-right: $padding-left-text; // space between img and text, if text if right
-
-        @if $img-first {
-          order: -1;
-        }
-      }
-    }
-
-    article#story {
-      @include layout(0, "1 / 7", 2rem, "7 / 11", "./frying-pan.jpg", false, white);
-    }
-
-    article#flavors {
-      @include layout(2rem, "6 / 11", 2rem, "1 / 6", "./spices.jpg", true, $light-green);
-    }
-
-    article#CTA {
-      @include layout(0, "1 / 5", 1rem, "5 / 11", "./dinner-table.jpg", false, $light-orange);
-    }
-
     footer {
       @include center-content();
       height: 6rem;
       background-color: $gray-blue;
     }
+  }
+}
+
+// keep it DRY when declaring unique layouts for articles
+@mixin layout($padding-left-text, $text-cols, $padding-right-text, $img-cols, $img-src, $img-first: false, $bg-color) {
+  background-color: $bg-color;
+
+  .text {
+    align-self: center;
+    grid-column: #{$text-cols};
+    padding-right: $padding-right-text;
+  }
+
+  .img-container {
+    min-height: 35vw;
+    grid-column: #{$img-cols};
+    @include center-bg($img-src); // img a background so its height is equal to text
+    margin-right: $padding-left-text; // space between img and text, if text if right
+
+    @if $img-first {
+      order: -1;
+    }
+  }
+}
+
+// page-specific layouts
+#about-page {
+  .banner {
+    @include center-bg("./banner-background.jpg");
+  }
+
+  article#story {
+    @include layout(0, "1 / 7", 2rem, "7 / 11", "./frying-pan.jpg", false, white);
+  }
+
+  article#flavors {
+    @include layout(2rem, "6 / 11", 2rem, "1 / 6", "./spices.jpg", true, $light-green);
+  }
+
+  article#CTA {
+    @include layout(0, "1 / 5", 1rem, "5 / 11", "./dinner-table.jpg", false, $light-orange);
   }
 }

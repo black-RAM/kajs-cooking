@@ -5,7 +5,7 @@ function renderAboutPage(contentDiv) {
   const navBar = createNavbar()
 
   // Create main section and banner
-  const mainSection = createMainWithBanner("Who We Are");
+  const mainSection = createMainWithBanner("about-page", "Who We Are");
 
   // create articles
   const articleStory = createArticle(

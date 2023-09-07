@@ -178,3 +178,48 @@ img {
     @include layout(0, "1 / 5", 1rem, "5 / 11", "./imgsA/dinner-table.jpg", false, $light-orange);
   }
 }
+
+#menu-page {
+  .banner {
+    @include center-bg("./imgsB/wine-and-food.jpg")
+  }
+
+  article#appetizers {
+    @include layout(2rem, "5 / 11", 2rem, "1 / 5", "./imgsB/stacked-cookies.jpg", true, #DFE4E7)
+  }
+
+  article#soups {
+    @include layout(0, "1 / 5", 2rem, "5 / 11", "./imgsB/soup.jpg", false, #EBEEF3)
+  }
+
+  article#salads {
+    @include layout(2rem, "5 / 11", 2rem, "1 / 5", "./imgsB/salads.jpg", true, white);
+  }
+
+  .flow-break#main-courses {
+    @include center-bg("./imgsB/steak-fire.jpg")
+  }
+
+  article#meats {
+    @include layout(0, "1 / 6", 2rem, "6 / 11", "./imgsB/raw-meat.jpg", false, #01060C);
+    color: white;
+  }
+
+  article#pizzas {
+    @include layout(2rem, "1 / 6", 2rem, "6 / 11 ", "./imgsB/pizza.jpg", false, black);
+    color: white;
+  }
+
+  article#burgers {
+    @include layout(2rem, "5 / 11", 0, "1 / 5", "./imgsB/burger.jpg", true, black);
+    color: white;
+  }
+
+  .flow-break#desert {
+    @include center-bg("./imgsB/cupcake.jpg")
+  }
+
+  article#desert-content {
+    @include layout(2rem, "5 / 11", 2rem, "1 / 5", "./imgsB/light-donut.jpg", true, #F1F5F8);
+  }
+}

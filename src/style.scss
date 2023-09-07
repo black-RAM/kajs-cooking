@@ -40,13 +40,16 @@ img {
   background-position: center;
 }
 
+// utility class
 .center-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
+// also a utility class
 .parralax {
   background-attachment: fixed;
 }
@@ -79,6 +82,8 @@ img {
 
     ul li {
       margin-bottom: 2em;
+      -webkit-user-select: none;
+      user-select: none;
     }
 
     // make side-bar go across when wrapped
@@ -221,5 +226,12 @@ img {
 
   article#desert-content {
     @include layout(2rem, "5 / 11", 2rem, "1 / 5", "./imgsB/light-donut.jpg", true, #F1F5F8);
+  }
+}
+
+#unfinished-page {
+  .banner {
+    @include center-bg("./imgsC/working.jpg");
+    height: 100vh !important;
   }
 }

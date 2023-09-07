@@ -9,6 +9,7 @@ function createNavbar() {
   navHeading.textContent = "Kaj's Kitchen";
 
   const navList = document.createElement("ul");
+  navList.id = "page-list"
   const navItems = ["About", "Menu", "Location"];
 
   navItems.forEach(itemText => {

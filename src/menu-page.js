@@ -46,12 +46,12 @@ function renderMenuPage(contentDiv) {
   ]);
 
   const articleBurgers = createArticle("burgers", "Burgers and Sandwiches", [
-    "<b>Hawaiian Burger:</b> A savory beef patty topped with pineapple, bacon, Swiss cheese, and teriyaki glaze, with lettuce and tomato.",
-    "<b>Beef Burger:</b> A classic beef patty topped with your choice of cheese, lettuce, tomato, onion, and pickles on a toasted bun.",
-    "<b>Chicken Burger:</b> A grilled chicken breast served with fresh lettuce, tomato, and your choice of toppings.",
-    "<b>BBQ Burger:</b> A beef patty coated in barbecue sauce, topped with onion straws, cheddar cheese, and coleslaw.",
-    "<b>Veggie Burger:</b> A plant-based patty made from black beans, vegetables, and grains, served with various toppings.",
-    "<b>Cheeseburger:</b> A simple and timeless favorite with a grilled beef patty, melted cheese, lettuce, tomato, onion, and pickles on a bun.",
+    "<b>Hawaiian Burger</b> - A savory beef patty topped with pineapple, bacon, Swiss cheese, and teriyaki glaze, with lettuce and tomato.",
+    "<b>Beef Burger</b> - A classic beef patty topped with your choice of cheese, lettuce, tomato, onion, and pickles on a toasted bun.",
+    "<b>Chicken Burger</b> - A grilled chicken breast served with fresh lettuce, tomato, and your choice of toppings.",
+    "<b>BBQ Burger</b> - A beef patty coated in barbecue sauce, topped with onion straws, cheddar cheese, and coleslaw.",
+    "<b>Veggie Burger</b> - A plant-based patty made from black beans, vegetables, and grains, served with various toppings.",
+    "<b>Cheeseburger</b> - A simple and timeless favorite with a grilled beef patty, melted cheese, lettuce, tomato, onion, and pickles on a bun.",
   ]);
 
   const articleDesserts = createArticle("desert-content", "Delicious Decadence", [

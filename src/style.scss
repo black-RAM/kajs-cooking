@@ -40,11 +40,15 @@ img {
   background-position: center;
 }
 
-@mixin center-content() {
+.center-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.parralax {
+  background-attachment: fixed;
 }
 
 #content {
@@ -102,8 +106,10 @@ img {
   main.page {
     flex: 500px;
 
-    .banner {
-      @include center-content();
+    .banner,
+    .flow-break {
+      @extend .center-content;
+      @extend .parralax;
 
       height: 70vh;
       background-attachment: fixed; // parralax effect
@@ -125,7 +131,7 @@ img {
     }
 
     footer {
-      @include center-content();
+      @extend .center-content;
       height: 6rem;
       background-color: $gray-blue;
     }

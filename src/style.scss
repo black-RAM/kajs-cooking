@@ -163,18 +163,18 @@ img {
 // page-specific layouts
 #about-page {
   .banner {
-    @include center-bg("./banner-background.jpg");
+    @include center-bg("./imgsA/banner-background.jpg");
   }
 
   article#story {
-    @include layout(0, "1 / 7", 2rem, "7 / 11", "./frying-pan.jpg", false, white);
+    @include layout(0, "1 / 7", 2rem, "7 / 11", "./imgsA/frying-pan.jpg", false, white);
   }
 
   article#flavors {
-    @include layout(2rem, "6 / 11", 2rem, "1 / 6", "./spices.jpg", true, $light-green);
+    @include layout(2rem, "6 / 11", 2rem, "1 / 6", "./imgsA/spices.jpg", true, $light-green);
   }
 
   article#CTA {
-    @include layout(0, "1 / 5", 1rem, "5 / 11", "./dinner-table.jpg", false, $light-orange);
+    @include layout(0, "1 / 5", 1rem, "5 / 11", "./imgsA/dinner-table.jpg", false, $light-orange);
   }
 }

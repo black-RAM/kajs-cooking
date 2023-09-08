@@ -35,6 +35,17 @@
   text-align: center;
 }
 
-.parralax {
+.parallax {
   background-attachment: fixed;
+}
+
+.sticky-child {
+  display: flex;
+  flex-flow: column nowrap;
+
+  >div {
+    position: sticky;
+    align-self: flex-start;
+    top: 0;
+  }
 }

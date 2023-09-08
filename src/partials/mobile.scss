@@ -1,0 +1,41 @@
+@media screen and (max-width: 750px) {
+
+  // make side-bar go across
+  #side-bar {
+    width: 100vw;
+    flex-grow: 1;
+    position: sticky;
+    top: 0;
+
+    >div {
+      align-self: stretch;
+    }
+
+    h1 {
+      margin: 0;
+      text-align: center;
+    }
+
+    ul {
+      display: none;
+    }
+  }
+
+  // wrap text and images
+  main.page article {
+    display: flex;
+    flex-wrap: wrap;
+
+    .text {
+      flex: 400px;
+    }
+
+    .img-container {
+      flex: 400px;
+      height: 400px;
+      margin-right: 2rem !important;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+}

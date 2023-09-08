@@ -1,7 +1,7 @@
 import './style.scss'
-import renderAboutPage from "./about-page"
-import renderMenuPage from './menu-page';
-import renderLocationPage from './location-page';
+import renderAboutPage from "./modules/about-page"
+import renderMenuPage from './modules/menu-page';
+import renderLocationPage from './modules/location-page';
 
 // setup: create the content div
 const contentDiv = document.createElement("div");

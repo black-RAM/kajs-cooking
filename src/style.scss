@@ -229,9 +229,22 @@ img {
   }
 }
 
-#unfinished-page {
+#location-page {
   .banner {
-    @include center-bg("./imgsC/working.jpg");
-    height: 100vh !important;
+    @include center-bg("./imgsC/bakery.jpg");
+  }
+
+  article#find-us {
+    @include layout(2rem, "6 / 11", -2rem, "1 / 6", "./imgsC/view-out-of-window.jpg", true, white);
+
+    p:last-child {
+      margin-bottom: 0;
+
+      iframe {
+        width: 90%;
+        height: 450px;
+      }
+    }
+
   }
 }

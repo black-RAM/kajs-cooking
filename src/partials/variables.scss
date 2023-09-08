@@ -9,6 +9,13 @@ $bluish-white: hsl(217, 25%, 94%);
 $cool-blue-white: hsl(206, 33%, 96%);
 $blue-black: hsl(213, 85%, 3%);
 
+// font size variables
+$h1-size: min(10vw, 50px);
+
+h3 {
+  font-size: 40px;
+}
+
 // fonts
 @font-face {
   font-family: 'open sans';

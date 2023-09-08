@@ -18,8 +18,19 @@ function createNavbar() {
     navList.appendChild(li);
   });
 
-  navDiv.appendChild(navHeading);
-  navDiv.appendChild(navList);
+  // menu-toggle for dropdown menu on mobile
+  const menuToggle = document.createElement("button");
+  menuToggle.id = "menu-toggle";
+  menuToggle.textContent = "\u2630"; // menu icon in unicode
+
+  // logic to toggle list visibility
+  menuToggle.addEventListener("click", () => {
+    const isVisible = navList.style.display == "block";
+    navList.style.display = isVisible ? "none" : "block";
+    if (!isVisible) navList.classList.add("made-visible");
+  })
+
+  appendChildren(navDiv, [navHeading, menuToggle, navList])
   navBar.appendChild(navDiv);
 
   return navBar;

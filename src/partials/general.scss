@@ -12,13 +12,17 @@
   font-size: 25px;
 
   h1 {
-    font-size: min(10vw, 2em);
+    font-size: $h1-size;
     margin: 1em 0;
   }
 
   ul li {
     margin-bottom: 2em;
     cursor: pointer;
+  }
+
+  #menu-toggle {
+    display: none;
   }
 }
 
@@ -31,24 +35,16 @@ main.page {
     @extend .parallax;
 
     height: 70vh;
-    background-attachment: fixed; // parallax effect
     color: white;
     font-size: 4rem;
   }
 
-  // general rules
   article {
     padding: 2rem;
     padding-right: 0;
 
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-
-    h3 {
-      font-size: 40px;
-    }
-
-    @media screen and (max-width: 750px) {}
   }
 
   footer {

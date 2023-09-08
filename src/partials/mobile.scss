@@ -9,6 +9,8 @@
 
     >div {
       align-self: stretch;
+      display: flex;
+      justify-content: space-between;
     }
 
     h1 {
@@ -16,8 +18,31 @@
       text-align: center;
     }
 
+    #menu-toggle {
+      display: block;
+      font-size: $h1-size;
+    }
+
     ul {
       display: none;
+    }
+
+    ul.made-visible {
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.7);
+      top: calc($h1-size + 35px);
+      right: -15px;
+      padding-top: 20px;
+      padding-right: 20px;
+
+      li {
+        margin-bottom: 20px;
+      }
+
+      @supports (backdrop-filter: blur(0)) {
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+      }
     }
   }
 
@@ -26,6 +51,11 @@
     display: flex;
     flex-wrap: wrap;
 
+    .text,
+    .img-container {
+      margin-right: 2rem !important;
+    }
+
     .text {
       flex: 400px;
     }
@@ -33,7 +63,6 @@
     .img-container {
       flex: 400px;
       height: 400px;
-      margin-right: 2rem !important;
       margin-top: 2rem;
       margin-bottom: 2rem;
     }

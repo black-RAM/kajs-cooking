@@ -1,0 +1,40 @@
+// keep it DRY when declaring properties for unique layouts for articles
+@mixin layout($padding-left-text, $text-cols, $padding-right-text, $img-cols, $img-src, $img-first: false, $bg-color) {
+  background-color: $bg-color;
+
+  .text {
+    align-self: center;
+    grid-column: #{$text-cols};
+    padding-right: $padding-right-text;
+  }
+
+  .img-container {
+    min-height: 35vw;
+    grid-column: #{$img-cols};
+    @include center-bg($img-src); // img a background so its height is equal to text
+    margin-right: $padding-left-text; // space between img and text, if text if right
+
+    @if $img-first {
+      order: -1;
+    }
+  }
+}
+
+@mixin center-bg($url) {
+  background-image: url($url);
+  background-size: cover;
+  background-position: center;
+}
+
+// utility classes
+.center-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.parralax {
+  background-attachment: fixed;
+}

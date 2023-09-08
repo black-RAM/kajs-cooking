@@ -1,169 +1,7 @@
-// color scheme
-$light-gold: #F3DA81;
-$light-green: #F6FFD1;
-$light-orange: #FFF6D6;
-$light-blue: #D3DCE9;
-$gray-blue: #7D8B9F;
-
-// fonts
-@font-face {
-  font-family: 'open sans';
-  src: url('./open-sans.ttf');
-  font-style: normal;
-  font-weight: 400;
-}
-
-h1,
-h2,
-h3,
-ul,
-a,
-body {
-  margin: 0;
-  color: inherit;
-}
-
-body {
-  font-family: 'open sans', Arial, Helvetica, sans-serif;
-  font-size: 16px;
-}
-
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-@mixin center-bg($url) {
-  background-image: url($url);
-  background-size: cover;
-  background-position: center;
-}
-
-// utility class
-.center-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-// also a utility class
-.parralax {
-  background-attachment: fixed;
-}
-
-#content {
-  display: flex;
-  flex-wrap: wrap;
-
-  #side-bar {
-    flex: 0 0 min-content;
-    background-color: $light-gold;
-    color: white;
-    padding: 1rem;
-    font-size: 25px;
-
-    // make content stay fixed to side, without being absolute
-    display: flex;
-    flex-flow: column nowrap;
-
-    >div {
-      position: sticky;
-      align-self: flex-start;
-      top: 0;
-    }
-
-    h1 {
-      font-size: min(10vw, 2em);
-      margin: 1em 0;
-    }
-
-    ul li {
-      margin-bottom: 2em;
-      -webkit-user-select: none;
-      user-select: none;
-    }
-
-    // make side-bar go across when wrapped
-    @media screen and (max-width: 750px) {
-      flex-grow: 1;
-      position: sticky;
-      top: 0;
-      width: 100vw;
-
-      >div {
-        align-self: stretch;
-      }
-
-      h1 {
-        margin: 0;
-        text-align: center;
-      }
-
-      ul {
-        display: none;
-      }
-    }
-  }
-
-  main.page {
-    flex: 500px;
-
-    .banner,
-    .flow-break {
-      @extend .center-content;
-      @extend .parralax;
-
-      height: 70vh;
-      background-attachment: fixed; // parralax effect
-      color: white;
-      font-size: 4rem;
-    }
-
-    // general rules
-    article {
-      padding: 2rem;
-      padding-right: 0;
-
-      display: grid;
-      grid-template-columns: repeat(10, 1fr);
-
-      h3 {
-        font-size: 40px;
-      }
-    }
-
-    footer {
-      @extend .center-content;
-      height: 6rem;
-      background-color: $gray-blue;
-    }
-  }
-}
-
-// keep it DRY when declaring unique layouts for articles
-@mixin layout($padding-left-text, $text-cols, $padding-right-text, $img-cols, $img-src, $img-first: false, $bg-color) {
-  background-color: $bg-color;
-
-  .text {
-    align-self: center;
-    grid-column: #{$text-cols};
-    padding-right: $padding-right-text;
-  }
-
-  .img-container {
-    min-height: 35vw;
-    grid-column: #{$img-cols};
-    @include center-bg($img-src); // img a background so its height is equal to text
-    margin-right: $padding-left-text; // space between img and text, if text if right
-
-    @if $img-first {
-      order: -1;
-    }
-  }
-}
+@import "partials/variables";
+@import "partials/reset";
+@import "partials/mixins";
+@import "partials/general";
 
 // page-specific layouts
 #about-page {
@@ -190,11 +28,11 @@ img {
   }
 
   article#appetizers {
-    @include layout(2rem, "5 / 11", 2rem, "1 / 5", "./imgsB/stacked-cookies.jpg", true, #DFE4E7)
+    @include layout(2rem, "5 / 11", 2rem, "1 / 5", "./imgsB/stacked-cookies.jpg", true, $light-gray-blue)
   }
 
   article#soups {
-    @include layout(0, "1 / 5", 2rem, "5 / 11", "./imgsB/soup.jpg", false, #EBEEF3)
+    @include layout(0, "1 / 5", 2rem, "5 / 11", "./imgsB/soup.jpg", false, $bluish-white)
   }
 
   article#salads {
@@ -206,7 +44,7 @@ img {
   }
 
   article#meats {
-    @include layout(0, "1 / 6", 2rem, "6 / 11", "./imgsB/raw-meat.jpg", false, #01060C);
+    @include layout(0, "1 / 6", 2rem, "6 / 11", "./imgsB/raw-meat.jpg", false, $blue-black);
     color: white;
   }
 
@@ -225,7 +63,7 @@ img {
   }
 
   article#desert-content {
-    @include layout(2rem, "5 / 11", 2rem, "1 / 5", "./imgsB/light-donut.jpg", true, #F1F5F8);
+    @include layout(2rem, "5 / 11", 2rem, "1 / 5", "./imgsB/light-donut.jpg", true, $cool-blue-white);
   }
 }
 

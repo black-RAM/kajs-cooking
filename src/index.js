@@ -8,8 +8,7 @@ const contentDiv = document.createElement("div");
 contentDiv.id = "content";
 
 // Call the renderAboutPage function when page first loads
-// renderAboutPage(contentDiv);
-renderLocationPage(contentDiv)
+renderAboutPage(contentDiv);
 
 // append content to body
 document.body.appendChild(contentDiv);

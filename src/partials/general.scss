@@ -1,0 +1,88 @@
+#content {
+  display: flex;
+  flex-wrap: wrap;
+
+  #side-bar {
+    flex: 0 0 min-content;
+    background-color: $light-gold;
+    color: white;
+    padding: 1rem;
+    font-size: 25px;
+
+    // make content stay fixed to side, without being absolute
+    display: flex;
+    flex-flow: column nowrap;
+
+    >div {
+      position: sticky;
+      align-self: flex-start;
+      top: 0;
+    }
+
+    h1 {
+      font-size: min(10vw, 2em);
+      margin: 1em 0;
+    }
+
+    ul li {
+      margin-bottom: 2em;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    // make side-bar go across when wrapped
+    @media screen and (max-width: 750px) {
+      flex-grow: 1;
+      position: sticky;
+      top: 0;
+      width: 100vw;
+
+      >div {
+        align-self: stretch;
+      }
+
+      h1 {
+        margin: 0;
+        text-align: center;
+      }
+
+      ul {
+        display: none;
+      }
+    }
+  }
+
+  main.page {
+    flex: 500px;
+
+    .banner,
+    .flow-break {
+      @extend .center-content;
+      @extend .parralax;
+
+      height: 70vh;
+      background-attachment: fixed; // parralax effect
+      color: white;
+      font-size: 4rem;
+    }
+
+    // general rules
+    article {
+      padding: 2rem;
+      padding-right: 0;
+
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+
+      h3 {
+        font-size: 40px;
+      }
+    }
+
+    footer {
+      @extend .center-content;
+      height: 6rem;
+      background-color: $gray-blue;
+    }
+  }
+}

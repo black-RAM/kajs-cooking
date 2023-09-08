@@ -1,0 +1,18 @@
+// color scheme
+$light-gold: hsl(47, 83%, 73%);
+$light-green: hsl(72, 100%, 91%);
+$light-orange: hsl(47, 100%, 92%);
+$light-blue: hsl(215, 33%, 87%);
+$gray-blue: hsl(215, 15%, 56%);
+$light-gray-blue: hsl(202, 14%, 89%);
+$bluish-white: hsl(217, 25%, 94%);
+$cool-blue-white: hsl(206, 33%, 96%);
+$blue-black: hsl(213, 85%, 3%);
+
+// fonts
+@font-face {
+  font-family: 'open sans';
+  src: url('./open-sans.ttf');
+  font-style: normal;
+  font-weight: 400;
+}
